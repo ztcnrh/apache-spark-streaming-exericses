@@ -184,7 +184,7 @@ joined_df.selectExpr("cast(customer as string) as key", "to_json(struct(*)) as v
     .writeStream \
     .format("kafka") \
     .option("kafka.bootstrap.servers", "kafka:19092") \
-    .option("topic", "customer-risk-data") \
+    .option("topic", "stedi-events") \
     .option("checkpointLocation","/tmp/kafkacheckpoint")\
     .start() \
     .awaitTermination()
